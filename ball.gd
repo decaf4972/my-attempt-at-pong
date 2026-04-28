@@ -1,38 +1,31 @@
-extends RigidBody2D
+extends Area2D
 
-var wall = false
-var paddle = false
+var velocity = Vector2.ZERO
+var still = true
 
+
+func mover(place, delta):
+	place += velocity*delta
+	return place
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	set_contact_monitor(true)
-	set_max_contacts_reported(4)
+	velocity = Vector2.ZERO
 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#if wall:
-		#print(wall)
-		#wall = false
-		#var velocity := get_linear_velocity()
-		#print(velocity)
-		#velocity.y *= -1
-		#print(velocity)
-		#set_linear_velocity(velocity)
-	print(linear_velocity)
+	if still and Input.is_anything_pressed():
+		still = false
+		velocity = Vector2(400.0, 400.0)
+	position = mover(position, delta)
 
-func _on_body_entered(body: Node) -> void:
-	print('body entered')
-	if len(get_colliding_bodies()) > 2:
-		print('doubble hit detected')
-		wall = true
-		paddle = true
-		return
-	elif body is StaticBody2D:
-		print('wall detected')
-		wall = true
-		return
-	else:
-		print('paddle detected')
-		paddle = true
-		return
-	print('this should not run')
+
+func _on_body_entered(body: Node2D):
+	if body.is_in_group('walls'):
+		velocity.y *= -1
+	elif body.is_in_group('paddles'):
+		var relative = position.y - body.position.y - 64
+		velocity.y = relative*8.0
+		if velocity.x < 1100.0:
+			velocity.x *= -1.1

@@ -6,7 +6,9 @@
 size = Vector2(16, 128)
 
 [node name="Paddle" type="CharacterBody2D" unique_id=960972915]
-collision_mask = 6
+collision_mask = 4
+motion_mode = 1
+platform_floor_layers = 4294967040
 script = ExtResource("1_0sbc1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1479249167]

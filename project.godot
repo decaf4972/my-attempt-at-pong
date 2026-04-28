@@ -15,6 +15,16 @@ run/main_scene="uid://dvkeyowfc8l1l"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Score="*uid://bsq576ld1vm3o"
+
+[global_group]
+
+paddles=""
+walls=""
+death=""
+
 [layer_names]
 
 2d_physics/layer_1="paddle"
@@ -25,6 +35,9 @@ config/icon="res://icon.svg"
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=0.0
+2d/default_linear_damp=0.0
+2d/default_angular_damp=0.0
 
 [rendering]
 

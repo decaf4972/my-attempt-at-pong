@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dd7sxt5kscsbd"]
+
+[ext_resource type="Script" uid="uid://cmr2l0ks3gq22" path="res://e_paddle.gd" id="1_8xgu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adwoc"]
+size = Vector2(16, 128)
+
+[node name="EPaddle" type="RigidBody2D" unique_id=70096021]
+collision_mask = 6
+script = ExtResource("1_8xgu5")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=941900479 groups=["paddles"]]
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 128, 0, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=855626182]
+position = Vector2(8, 64)
+shape = SubResource("RectangleShape2D_adwoc")
