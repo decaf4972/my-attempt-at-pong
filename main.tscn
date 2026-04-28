@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dvkeyowfc8l1l"]
+
+[ext_resource type="PackedScene" uid="uid://daki7vm7i0n06" path="res://paddle.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bvi2ivbc7kpej" path="res://wall.tscn" id="3_1bvp3"]
+
+[node name="Main" type="Node2D" unique_id=554002636]
+
+[node name="Paddle" parent="." unique_id=960972915 instance=ExtResource("1_ig7tw")]
+position = Vector2(48, 256)
+
+[node name="wall" parent="." unique_id=726820094 instance=ExtResource("3_1bvp3")]
+
+[node name="wall2" parent="." unique_id=280032881 instance=ExtResource("3_1bvp3")]
+position = Vector2(0, 664)
