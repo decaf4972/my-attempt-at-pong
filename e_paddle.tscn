@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dd7sxt5kscsbd"]
 
 [ext_resource type="Script" uid="uid://cmr2l0ks3gq22" path="res://e_paddle.gd" id="1_8xgu5"]
+[ext_resource type="Script" uid="uid://cnkinf834jsqj" path="res://timer.gd" id="2_jc81v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adwoc"]
 size = Vector2(16, 128)
@@ -15,3 +16,10 @@ polygon = PackedVector2Array(0, 0, 16, 0, 16, 128, 0, 128)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=855626182]
 position = Vector2(8, 64)
 shape = SubResource("RectangleShape2D_adwoc")
+
+[node name="Timer" type="Timer" parent="." unique_id=1083166520]
+wait_time = 0.5
+autostart = true
+script = ExtResource("2_jc81v")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

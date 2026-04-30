@@ -2,18 +2,26 @@
 
 [ext_resource type="Script" uid="uid://dx8slnnic7kkp" path="res://scoreboard.gd" id="1_jeshg"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_jeshg"]
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_vug2y"]
+font_size = 42
+
 [node name="Scoreboard" type="Node2D" unique_id=1547898537]
 script = ExtResource("1_jeshg")
 
 [node name="PlayerScore" type="Label" parent="." unique_id=1752322718]
 offset_left = 256.0
-offset_top = 608.0
+offset_top = 568.0
 offset_right = 296.0
-offset_bottom = 631.0
+offset_bottom = 591.0
+label_settings = SubResource("LabelSettings_jeshg")
 
 [node name="EnemyScore" type="Label" parent="." unique_id=482176424]
 offset_left = 856.0
-offset_top = 608.0
+offset_top = 560.0
 offset_right = 896.0
-offset_bottom = 631.0
+offset_bottom = 583.0
+label_settings = SubResource("LabelSettings_vug2y")
 horizontal_alignment = 2

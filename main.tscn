@@ -19,7 +19,7 @@ position = Vector2(48, 256)
 [node name="wall" parent="." unique_id=726820094 groups=["walls"] instance=ExtResource("3_1bvp3")]
 
 [node name="wall2" parent="." unique_id=280032881 groups=["walls"] instance=ExtResource("3_1bvp3")]
-position = Vector2(0, 664)
+position = Vector2(0, 776)
 
 [node name="Ball" parent="." unique_id=500062712 instance=ExtResource("4_1bvp3")]
 position = Vector2(384, 304)
